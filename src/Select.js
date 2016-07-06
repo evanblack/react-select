@@ -398,6 +398,7 @@ const Select = React.createClass({
 		if (this.props.disabled) return;
 		switch (event.keyCode) {
 			case 8: // backspace
+				event.stopPropagation();
 				if (!this.state.inputValue && this.props.backspaceRemoves) {
 					event.preventDefault();
 					this.popValue();
